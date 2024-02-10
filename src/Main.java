@@ -17,6 +17,7 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
+        JPanel panel = new JPanel();
         mainPanel.setLayout(new BorderLayout()); //Создание конструктора который перемещает обьекты внутри основной панели
 
         textArea = new JTextArea(); // Обьявление
@@ -85,5 +86,7 @@ public class Main extends JFrame {
                 main.setVisible(true);
             }
         });
+
+        //add
     }
 }
