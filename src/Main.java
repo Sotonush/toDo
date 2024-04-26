@@ -12,12 +12,11 @@ public class Main extends JFrame {
     public Main() {
         texts = new ArrayList<>(); //Обьявление
         //Задание базовых вещей для интерфейса
-        setTitle("Приложение");
+        setTitle("ToDoApp");
         setSize(1000, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
-        JPanel panel = new JPanel();
         mainPanel.setLayout(new BorderLayout()); //Создание конструктора который перемещает обьекты внутри основной панели
 
         textArea = new JTextArea(); // Обьявление
@@ -35,11 +34,11 @@ public class Main extends JFrame {
         JPanel buttonPanel = new JPanel(); // создание панели для кнопок
         buttonPanel.setLayout(new FlowLayout()); //определение их в 1 строчку
 
-        JButton addButton = new JButton("Напиши что ты хочешь"); //Создание кнопки
+        JButton addButton = new JButton("Создание задачи"); //Создание кнопки
         addButton.addActionListener(new ActionListener() { // реализация кнопки и вывод дополнительнового окна
             @Override //переопределение метода
             public void actionPerformed(ActionEvent e) { // реализация нового окна, куда вводится текст
-                String text = JOptionPane.showInputDialog("Вот сюда текст надо"); //переменная что вберает в себя данные с нового окна
+                String text = JOptionPane.showInputDialog("Какая у нас задача?"); //переменная что вберает в себя данные с нового окна
                 if (text != null && !text.isEmpty()) {
                     addText(text);
                     updateTextArea();
@@ -48,7 +47,7 @@ public class Main extends JFrame {
         });
         buttonPanel.add(addButton);//добавление кнопки на панель кнопок
 
-        JButton displayButton =  new JButton("Все текста"); // новая кнопка
+        JButton displayButton =  new JButton("Наши задачи"); // новая кнопка
         displayButton.addActionListener(new ActionListener() { // реализация
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -86,7 +85,5 @@ public class Main extends JFrame {
                 main.setVisible(true);
             }
         });
-
-        //add
     }
 }
